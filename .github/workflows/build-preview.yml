@@ -10,6 +10,8 @@ on:
 
 jobs:
   build-preview:
+    # Disabled on Forgejo/Frameleaf: Cloudflare Pages deploy for upstream Dokploy only.
+    if: github.repository_owner == 'Dokploy'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -144,7 +144,8 @@ jobs:
 
       - name: Upload the full report
         if: always() && steps.audit.outputs.report_path != ''
-        uses: actions/upload-artifact@v4
+        # Forgejo fork: upstream v4+ refuses non-github.com servers
+        uses: https://code.forgejo.org/forgejo/upload-artifact@cb8afe72b42edc798abfb8fcb556cf660d894245 # v5
         with:
           name: blueprint-audit
           path: ${{ steps.audit.outputs.report_path }}

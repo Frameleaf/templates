@@ -7,6 +7,8 @@ on:
 
 jobs:
   publish:
+    # Disabled on Forgejo/Frameleaf: Cloudflare Pages deploy for upstream Dokploy only.
+    if: github.repository_owner == 'Dokploy'
     runs-on: ubuntu-latest
     permissions:
       contents: read
